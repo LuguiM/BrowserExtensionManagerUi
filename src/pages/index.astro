@@ -1,11 +1,14 @@
 ---
-
+import Header from "../content/header.astro"
+import MainContent from "../content/main/mainContent.astro"
+import Footer from "../content/footer.astro"
 ---
 
 <html lang="en">
 	<head>
 		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<!-- <link rel="icon" type="image/svg+xml" href="/favicon.svg" /> -->
+		<link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png">
 		<meta name="viewport" content="width=device-width" />
 		<meta name="generator" content={Astro.generator} />
 		<title>Frontend Mentor | Browser extensions manager UI</title>
@@ -14,105 +17,12 @@
 	</head>
 	<body>
 		<div class="container">
-			<header>
-				<img src="./assets/images/logo.svg" alt="logo" />
+			<Header />
+			<MainContent />
+			<Footer />			
 
-				<button onclick="toggleDarkMode()" class="style-mode-btn">
-					<img
-						src="./assets/images/icon-sun.svg"
-						alt="swithImg"
-						class="light"
-					/>
-					<img
-						src="./assets/images/icon-moon.svg"
-						alt="swithImg"
-						class="dark"
-					/>
-				</button>
-			</header>
-
-			<main class="main-content">
-				<div class="filter-container">
-					<h1>Extensions List</h1>
-					<div class="filter-group">
-						<input type="radio" id="all" name="status" checked />
-						<label for="all">All</label>
-
-						<input type="radio" id="active" name="status" />
-						<label for="active">Active</label>
-
-						<input type="radio" id="inactive" name="status" />
-						<label for="inactive">Inactive</label>
-					</div>
-				</div>
-
-				<div class="card-container">
-					<div class="card">
-						<div class="card-header">
-							<img
-								src="./assets/images/logo-style-spy.svg"
-								alt="d"
-							/>
-							<div class="header-text">
-								<h2>Style Spy</h2>
-								<p>
-									Quickly inspect page layouts and visualize
-									elements boundaries.
-								</p>
-							</div>
-						</div>
-						<div class="card-actions">
-							<button>Remove</button>
-							<!-- From Uiverse.io by Yaya12085 -->
-							<input
-								class="switch"
-								type="checkbox"
-								checked="true"
-							/>
-						</div>
-					</div>
-					<div class="card">s</div>
-					<div class="card">s</div>
-					<div class="card">s</div>
-				</div>
-			</main>
-
-			<footer class="attribution">
-				Challenge by <a
-					href="https://www.frontendmentor.io?ref=challenge"
-					>Frontend Mentor</a
-				>. Coded by <a href="#">Your Name Here</a>.
-			</footer>
+			
 		</div>
-		<script is:inline>
-			const lightImg = document.querySelector(".light");
-			const darkImg = document.querySelector(".dark");
-
-			function toggleDarkMode() {
-				const root = document.documentElement;
-				root.classList.toggle("dark-mode");
-				localStorage.setItem(
-					"theme",
-					root.classList.contains("dark-mode") ? "dark" : "light",
-				);
-
-				if (document.documentElement.classList.contains("dark-mode")) {
-					lightImg.style.display = "block";
-					darkImg.style.display = "none";
-				} else {
-					lightImg.style.display = "none";
-					darkImg.style.display = "block";
-				}
-			}
-
-			// Al cargar la página
-			window.addEventListener("DOMContentLoaded", () => {
-				if (localStorage.getItem("theme") === "dark") {
-					document.documentElement.classList.add("dark-mode");
-					lightImg.style.display = "block";
-					darkImg.style.display = "none";
-				}
-			});
-		</script>
+		
 	</body>
 </html>

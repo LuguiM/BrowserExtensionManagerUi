@@ -1,0 +1,77 @@
+---
+
+---
+
+<header>
+    <img src="./assets/images/logo.svg" alt="logo" />
+
+    <button onclick="toggleDarkMode()" class="style-mode-btn">
+        <img src="./assets/images/icon-sun.svg" alt="swithImg" class="light" />
+        <img src="./assets/images/icon-moon.svg" alt="swithImg" class="dark" />
+    </button>
+</header>
+
+<script is:inline>
+    const lightImg = document.querySelector(".light");
+    const darkImg = document.querySelector(".dark");
+
+    function toggleDarkMode() {
+        const root = document.documentElement;
+        root.classList.toggle("dark-mode");
+        localStorage.setItem(
+            "theme",
+            root.classList.contains("dark-mode") ? "dark" : "light",
+        );
+
+        if (document.documentElement.classList.contains("dark-mode")) {
+            lightImg.style.display = "block";
+            darkImg.style.display = "none";
+        } else {
+            lightImg.style.display = "none";
+            darkImg.style.display = "block";
+        }
+    }
+
+    // Al cargar la página
+    window.addEventListener("DOMContentLoaded", () => {
+        if (localStorage.getItem("theme") === "dark") {
+            document.documentElement.classList.add("dark-mode");
+            lightImg.style.display = "block";
+            darkImg.style.display = "none";
+        }
+    });
+</script>
+
+<style is:global>
+    header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 20px;
+        margin: 2rem 0;
+        background: var(--neutral-0);
+        box-shadow: 0 2px 4px var(--neutral-200);
+        border-radius: 15px;
+    }
+
+    .dark-mode header {
+        background: var(--neutral-800);
+        box-shadow: 0 2px 3px var(--neutral-800);
+    }
+
+    .style-mode-btn {
+        background: var(--neutral-300);
+        border-style: inherit;
+        border-radius: 10px;
+        padding: 5px 6px;
+        cursor: pointer;
+    }
+
+    .style-mode-btn .light {
+        display: none;
+    }
+
+    .dark-mode .style-mode-btn {
+        background: var(--neutral-700);
+    }
+</style>

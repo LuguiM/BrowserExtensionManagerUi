@@ -1,0 +1,86 @@
+---
+
+---
+
+<div class="card">
+    <div class="card-header">
+        <img src="./assets/images/logo-style-spy.svg" alt="d" />
+        <div class="header-text">
+            <h2>Style Spy</h2>
+            <p>
+                Quickly inspect page layouts and visualize elements boundaries.
+            </p>
+        </div>
+    </div>
+    <div class="card-actions">
+        <button>Remove</button>
+        <!-- From Uiverse.io by Yaya12085 -->
+    </div>
+</div>
+
+<style is:global>
+    .card {
+        background: var(--neutral-0);
+        border: 1px solid;
+        border-color: var(--neutral-300);
+        border-radius: 15px;
+        padding: 20px;
+        display: flex;
+        flex-direction: column;
+        gap: 40px 0;
+    }
+
+    .dark-mode .card {
+        background: var(--neutral-700);
+        border-color: var(--neutral-600);
+    }
+
+    .card .card-header {
+        display: flex;
+        align-items: start;
+        gap: 1rem;
+    }
+
+    .card-header .header-text {
+        display: flex;
+        flex-direction: column;
+        gap: 5px;
+    }
+    .card-header .header-text p {
+        color: var(--neutral-600);
+    }
+
+    .dark-mode .card-header .header-text p {
+        color: var(--neutral-300);
+    }
+
+    .card .card-actions {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .card-actions button {
+        background: var(--neutral-0);
+        border: 1px solid var(--neutral-300);
+        border-radius: 15px;
+        padding: 8px 15px;
+        font-size: 15px;
+    }
+    .card-actions button:hover {
+        background: var(--red-700);
+        color: var(--neutral-0);
+    }
+
+    .dark-mode .card-actions button {
+        background: var(--neutral-700);
+        border-color: var(--neutral-600);
+        color: var(--neutral-0);
+    }
+
+    .dark-mode .card-actions button:hover {
+        background: var(--red-400);
+        color: var(--neutral-0);
+        color: var(--neutral-900);
+
+    }
+</style>

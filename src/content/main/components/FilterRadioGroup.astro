@@ -1,0 +1,71 @@
+---
+// FilterRadioGroup.astro
+const {
+    name = "status",
+    options = [],
+    selected = "",
+    onChange = "",
+} = Astro.props;
+---
+
+<div class="radio-group">
+    {
+        options.map((option) => (
+            <label class="input-radio-label">
+                <input
+                    type="radio"
+                    name={name}
+                    class="input-radio"
+                    value={option.value}
+                    checked={option.value === selected}
+                    onchange={onChange}
+                />
+                {option.label}
+            </label>
+        ))
+    }
+</div>
+
+<style is:global>
+    .radio-group {
+        display: flex;
+        gap: 12px;
+        padding: 20px;
+    }
+
+    .input-radio {
+        display: none;
+    }
+
+    .input-radio-label {
+        padding: 8px 20px;
+        border-radius: 999px;
+        border: 1px solid var(--neutral-300);
+        background-color: var(--neutral-0);
+        font-weight: 500;
+        cursor: pointer;
+        transition: all 0.3s ease;
+    }
+
+    .input-radio:checked + * {
+        background-color: var(--red-500);
+        color: var(--neutral-0);
+        border: none;
+    }
+
+    .input-radio-label:has(.input-radio:checked) {
+        background-color: var(--red-500);
+        color: var(--neutral-0);
+        border: none;
+    }
+
+    .dark-mode .input-radio-label {
+        background-color: var(--neutral-700);
+        border: 1px solid var(--neutral-600);
+    }
+
+    .dark-mode .input-radio-label:has(.input-radio:checked) {
+        background-color: var(--red-400);
+        color: var(--neutral-900);
+    }
+</style>
