@@ -127,6 +127,7 @@ header {
 .card-container {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(3, 1fr);
     gap: 20px;
     justify-items: center;
 }
@@ -184,17 +185,17 @@ header {
 }
 
 
-/* From Uiverse.io by Yaya12085 */ 
 .switch {
   position: relative;
-  height: 1.4rem;
+  display: inline-block;
+  height: 1.55rem;
   width: 3rem;
   cursor: pointer;
   appearance: none;
   -webkit-appearance: none;
   border-radius: 9999px;
   background-color: var(--neutral-300);
-  transition: all .3s ease;
+  transition: all 0.3s ease;
 }
 
 .switch:checked {
@@ -203,26 +204,25 @@ header {
 
 .switch:checked:hover {
   background-color: var(--red-500);
-}   
+}
 
 .switch::before {
   position: absolute;
   content: "";
-  left: calc(1.55rem - 1.4rem);
-  top: calc(1.55rem - 1.5rem);
-  display: block;
+  top: 0.1rem;
+  left: 0.1rem;
   height: 1.2rem;
   width: 1.2rem;
-  cursor: pointer;
   border: 1px solid var(--neutral-600);
   border-radius: 9999px;
   background-color: var(--neutral-0);
-  transition: all .3s ease;
+  transition: all 0.3s ease;
 }
 
-
-.switch:checked:before {
-  transform: translateX(100%);
+.switch:checked::before {
+  transform: translateX(1.6rem);
   border-color: var(--red-700);
 }
+
+
 
