@@ -1,20 +1,31 @@
 ---
+import Switch from "./switch.astro"
+
+const {
+    title,
+    description,
+    icon,
+    status,
+    onRemove,
+    onStatusChange,
+} = Astro.props
 
 ---
 
 <div class="card">
     <div class="card-header">
-        <img src="./assets/images/logo-style-spy.svg" alt="d" />
+        <img src={icon} alt="icon_image" />
         <div class="header-text">
-            <h2>Style Spy</h2>
+            <h2>{title}</h2>
             <p>
-                Quickly inspect page layouts and visualize elements boundaries.
+                {description}
             </p>
         </div>
     </div>
     <div class="card-actions">
-        <button>Remove</button>
+        <button onclick={onRemove}>Remove</button>
         <!-- From Uiverse.io by Yaya12085 -->
+         <Switch onChange={onStatusChange} />
     </div>
 </div>
 
@@ -27,11 +38,14 @@
         padding: 20px;
         display: flex;
         flex-direction: column;
+        justify-content: space-between;
         gap: 40px 0;
+        width: 100%;
+        max-width: 370px;
     }
 
     .dark-mode .card {
-        background: var(--neutral-700);
+        background: var(--neutral-800);
         border-color: var(--neutral-600);
     }
 
@@ -72,7 +86,7 @@
     }
 
     .dark-mode .card-actions button {
-        background: var(--neutral-700);
+        background: var(--neutral-800);
         border-color: var(--neutral-600);
         color: var(--neutral-0);
     }
