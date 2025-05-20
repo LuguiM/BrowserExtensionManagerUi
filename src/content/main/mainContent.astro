@@ -10,7 +10,7 @@ const options = [
 ];
 const selected = "all";
 
-const extensions = [...data]
+const extensions = [...data];
 ---
 
 <main class="main-content">
@@ -21,15 +21,13 @@ const extensions = [...data]
 
     <div class="card-container">
         {
-            // Loop through the data and render a card for each item
-            extensions.map( (ext, index) => (
-                
+            extensions.map((ext, index) => (
                 <Card
                     key={index}
                     title={ext.name}
                     description={ext.description}
                     icon={ext.logo}
-                    status="active"
+                    status={ext.isActive}
                     onRemove={() => console.log("Remove clicked")}
                     onStatusChange={() => console.log("Status changed")}
                 />
@@ -47,15 +45,36 @@ const extensions = [...data]
 
     .card-container {
         display: grid;
-        grid-template-columns: repeat(3, 1fr);
-        grid-template-rows: repeat(3, 1fr);
+        grid-template-columns: repeat(1, 1fr);
+        grid-template-rows: repeat(1, 1fr);
         gap: 20px;
         justify-items: center;
     }
 
     .filter-container {
         display: flex;
+        flex-direction: column;
         justify-content: space-between;
         align-items: center;
     }
+
+    @media (width >= 64rem) {
+        .card-container {
+            grid-template-columns: repeat(2, 1fr);
+            grid-template-rows: repeat(2, 1fr);
+        }
+
+        .filter-container {
+            flex-direction: row;
+        }
+    }
+
+    @media (width >= 80rem) { 
+         .card-container {
+            grid-template-columns: repeat(3, 1fr);
+            grid-template-rows: repeat(3, 1fr);
+            gap: 20px 70px;
+
+        }
+     }
 </style>

@@ -25,7 +25,7 @@ const {
     <div class="card-actions">
         <button onclick={onRemove}>Remove</button>
         <!-- From Uiverse.io by Yaya12085 -->
-         <Switch onChange={onStatusChange} />
+         <Switch onChange={onStatusChange} checked={status} />
     </div>
 </div>
 
@@ -41,7 +41,7 @@ const {
         justify-content: space-between;
         gap: 40px 0;
         width: 100%;
-        max-width: 370px;
+        /* max-width: 100%; */
     }
 
     .dark-mode .card {
@@ -97,4 +97,16 @@ const {
         color: var(--neutral-900);
 
     }
+
+    @media (width >= 64rem) { 
+        .card {
+            max-width: 400px;
+        }
+     }
+
+    @media (width >= 80rem) { 
+        .card {
+            max-width: 370px;
+        }
+     }
 </style>

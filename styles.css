@@ -43,7 +43,12 @@ h1,h2,h3,h4,h5,h6, p {
     /* max-height: max-content; */
     grid-template-rows: auto 1fr auto;
     gap: 1rem;
-    padding: 1rem 7rem;
+    padding: 1rem 2rem;
 }
 
 
+@media (width >= 80rem) { 
+    .container {
+        padding: 1rem 7rem;
+    }
+ }
