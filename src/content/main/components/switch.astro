@@ -18,16 +18,36 @@ const {
         appearance: none;
         -webkit-appearance: none;
         border-radius: 9999px;
-        background-color: var(--neutral-300);
+        background: var(--neutral-300);
         transition: all 0.3s ease;
     }
 
+    .dark-mode .switch {
+        background: var(--neutral-600);
+    }
+
+    .switch:hover {
+        background: var(--neutral-300);
+    }
+
+    .dark-mode .switch:hover {
+        background: var(--neutral-700);
+    }
+
     .switch:checked {
-        background-color: var(--red-700);
+        background: var(--red-700);
+    }
+
+    .dark-mode .switch:checked {
+        background: var(--red-400);
     }
 
     .switch:checked:hover {
-        background-color: var(--red-500);
+        background: var(--red-500);
+    }
+
+    .dark-mode .switch:checked:hover {
+        background: var(--red-700);
     }
 
     .switch::before {
@@ -39,7 +59,7 @@ const {
         width: 1.2rem;
         border: 1px solid var(--neutral-600);
         border-radius: 9999px;
-        background-color: var(--neutral-0);
+        background: var(--neutral-0);
         transition: all 0.3s ease;
     }
 
