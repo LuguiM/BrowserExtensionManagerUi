@@ -1,6 +1,6 @@
 ---
 import Header from "../content/header.astro"
-import MainContent from "../content/main/mainContent.astro"
+import MainContent from "../content/main/mainContent.jsx"
 import Footer from "../content/footer.astro"
 ---
 
@@ -18,7 +18,7 @@ import Footer from "../content/footer.astro"
 	<body>
 		<div class="container">
 			<Header />
-			<MainContent />
+			<MainContent client:load />
 			<Footer />			
 
 			

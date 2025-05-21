@@ -1,36 +1,4 @@
----
-import Switch from "./switch.astro"
-
-const {
-    title,
-    description,
-    icon,
-    status,
-    onRemove,
-    onStatusChange,
-} = Astro.props
-
----
-
-<div class="card">
-    <div class="card-header">
-        <img src={icon} alt="icon_image" />
-        <div class="header-text">
-            <h2>{title}</h2>
-            <p>
-                {description}
-            </p>
-        </div>
-    </div>
-    <div class="card-actions">
-        <button onclick={onRemove}>Remove</button>
-        <!-- From Uiverse.io by Yaya12085 -->
-         <Switch onChange={onStatusChange} checked={status} />
-    </div>
-</div>
-
-<style is:global>
-    .card {
+  .card {
         background: var(--neutral-0);
         border: 1px solid;
         border-color: var(--neutral-300);
@@ -109,4 +77,3 @@ const {
             max-width: 370px;
         }
      }
-</style>

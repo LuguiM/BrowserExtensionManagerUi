@@ -1,33 +1,4 @@
----
-// FilterRadioGroup.astro
-const {
-    name = "status",
-    options = [],
-    selected = "",
-    onChange = "",
-} = Astro.props;
----
-
-<div class="radio-group">
-    {
-        options.map((option) => (
-            <label class="input-radio-label">
-                <input
-                    type="radio"
-                    name={name}
-                    class="input-radio"
-                    value={option.value}
-                    checked={option.value === selected}
-                    onchange={onChange}
-                />
-                {option.label}
-            </label>
-        ))
-    }
-</div>
-
-<style is:global>
-    .radio-group {
+.radio-group {
         display: flex;
         gap: 12px;
         padding: 20px 0;
@@ -68,4 +39,3 @@ const {
         background-color: var(--red-400);
         color: var(--neutral-900);
     }
-</style>

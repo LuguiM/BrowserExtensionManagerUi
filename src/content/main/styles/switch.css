@@ -1,14 +1,3 @@
----
-const {
-    checked,
-    disabled,
-    onChange,
-} = Astro.props;
----
-
-<input class="switch" type="checkbox" checked={checked} />
-
-<style is:global>
     .switch {
         position: relative;
         display: inline-block;
@@ -67,4 +56,3 @@ const {
         transform: translateX(1.6rem);
         border-color: var(--red-700);
     }
-</style>
