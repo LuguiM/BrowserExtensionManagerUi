@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import data from '../../../data.json';
 import FilterRadioGroup from './components/FilterRadioGroup';
-import Card from './components/Card';
+import Card from './components/card';
 import './styles/mainContainer.css';
 
 const options = [
@@ -49,17 +49,20 @@ export default function ExtensionsList() {
             </div>
 
             <div className="card-container">
-                {filteredExtensions.map((ext, index) => (
-                    <Card
-                        key={index}
-                        title={ext.name}
-                        description={ext.description}
-                        icon={ext.logo}
-                        status={ext.isActive}
-                        onRemove={() => console.log('Remove clicked')}
-                        onStatusChange={handleStatus}
-                    />
-                ))}
+                {
+                    filteredExtensions.length > 0 ? 
+                    filteredExtensions.map((ext, index) => (
+                        <Card
+                            key={index}
+                            title={ext.name}
+                            description={ext.description}
+                            icon={ext.logo}
+                            status={ext.isActive}
+                            onRemove={() => console.log('Remove clicked')}
+                            onStatusChange={handleStatus}
+                        />
+                    )) : <div>Not data</div>
+                }
             </div>
         </main>
     );

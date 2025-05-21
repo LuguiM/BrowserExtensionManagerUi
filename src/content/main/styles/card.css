@@ -47,6 +47,7 @@
         border-radius: 15px;
         padding: 8px 15px;
         font-size: 15px;
+        cursor: pointer;
     }
     .card-actions button:hover {
         background: var(--red-700);
