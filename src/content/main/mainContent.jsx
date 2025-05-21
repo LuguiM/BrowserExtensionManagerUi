@@ -36,6 +36,11 @@ export default function ExtensionsList() {
         setExtensions(updatedExtensions);
     }
 
+    const removeExt = (title) => {
+        const updatedExt = extensions.filter((ext) => ext.name !== title);
+        setExtensions(updatedExt);
+    }
+
     return (
         <main className="main-content">
             <div className="filter-container">
@@ -58,7 +63,7 @@ export default function ExtensionsList() {
                             description={ext.description}
                             icon={ext.logo}
                             status={ext.isActive}
-                            onRemove={() => console.log('Remove clicked')}
+                            onRemove={removeExt}
                             onStatusChange={handleStatus}
                         />
                     )) : <div>Not data</div>

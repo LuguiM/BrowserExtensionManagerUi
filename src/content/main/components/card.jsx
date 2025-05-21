@@ -22,6 +22,7 @@ export default function Card({ title, description, icon, status, onRemove, onSta
 
   const handleContinue = () => {
     onRemove(title)
+    handleCancel();
     console.log('Continue action');
   };
 
